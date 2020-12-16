@@ -1,0 +1,68 @@
+{
+  "blog": [
+    {
+      "title": "hey",
+      "text": "heheeh",
+      "date": "2020-12-16T20:45:39.567Z",
+      "author": "heek",
+      "image": "https://firebasestorage.googleapis.com/v0/b/legumes-49e5e.appspot.com/o/images%2Ffruit_24.jpg?alt=media&token=4c90ef0b-e3d8-4d56-80ec-5b8a0ecafb7d",
+      "id": 1
+    }
+  ],
+  "category": [
+    {
+      "name": "pizza",
+      "urlName": "",
+      "id": 1
+    },
+    {
+      "name": "salad",
+      "urlName": "",
+      "id": 2
+    },
+    {
+      "name": "drinks",
+      "urlName": "",
+      "id": 3
+    },
+    {
+      "name": "sushi",
+      "id": 4
+    }
+  ],
+  "products": [
+    {
+      "category": {
+        "name": "salad",
+        "urlName": "",
+        "id": 2
+      },
+      "name": "ssmm",
+      "description": "mmmsm",
+      "price": 555,
+      "image": "https://firebasestorage.googleapis.com/v0/b/legumes-49e5e.appspot.com/o/images%2Ffruit_28.jpg?alt=media&token=392c2f55-54d5-4c66-ad25-eec30a88ba2a",
+      "count": 1,
+      "id": 1
+    }
+  ],
+  "orders": [
+    {
+      "name": "Bohdan",
+      "email": "bkolodiy20013@gmail.com",
+      "phone": "0971302656",
+      "street": "Антонича",
+      "payWay": "Cash",
+      "date": "2020-11-26T18:09:25.144Z",
+      "id": 1
+    },
+    {
+      "name": "aaa",
+      "email": "moaaadddaaaaai@esprit.tn",
+      "phone": "0561661644",
+      "street": "eee",
+      "payWay": "Cash",
+      "date": "2020-12-16T19:53:23.414Z",
+      "id": 2
+    }
+  ]
+}

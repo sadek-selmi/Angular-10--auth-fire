@@ -26,14 +26,14 @@ const routes: Routes = [
   { path: 'menu',component: ProductComponent, children: [
     { path: ':category', component: PizzaComponent },
 
-  ] },  
+  ] },
   { path: 'blog/:id', component: BlogDetailsComponent },
   { path: 'admin', component: AdminComponent, canActivate: [AdminGuard],  children: [
     { path: '', pathMatch: 'full', redirectTo: 'category' },
     { path: 'category', component: CategoryComponent },
     { path: 'products', component: ProductsComponent },
     { path: 'adminBlogs', component: BlogsComponent }
-  ] },  
+  ] },
   { path: '**', component: BlogComponent }
 
 ];
