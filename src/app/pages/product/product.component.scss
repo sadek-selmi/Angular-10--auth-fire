@@ -1,0 +1,135 @@
+.mymanu {
+  transition: 0.5s cubic-bezier(0, 0, 1, 1);
+  position: relative;
+}
+
+.dropdawn {
+  line-height: 60px;
+  width: 200px;
+  // height: 60px;
+  cursor: pointer;
+  overflow: hidden;
+  background-color: lightgray;
+  text-align: center;
+  font-weight: 100;
+  color: #343a40;
+  transition: min-height 1s linear;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  transition: height 0.5s ease-out;
+
+}
+
+.drop-content {
+  display: block;
+  // background-color: gold;
+  font-weight: 600;
+  font-family: sans-serif;
+  background-color: #343a40;
+  border-bottom: 1px solid white;
+  color: #FF9900;
+  border: 1px double #FF9900;
+}
+
+.hid-content {
+  font-weight: 100;
+  // background-color: cyan;
+  font-family: sans-serif;
+  border: none;
+  color: #343a40;
+  background-color: lightgray;
+}
+
+// .dropdawn:hover {
+//   transition: height 10s ease-out;
+//   min-height: 300px;
+
+// }
+
+.hid-content:hover {
+  border: 1px double #FF9900;
+  background-color: #343a40;
+
+  transition: transform 0.5s ease-out;
+  transform: translateY(-0.15rem);
+  box-shadow: 0px 3px 15px #343a40;
+  //   height: 55px;
+  color: #FF9900;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+
+}
+
+.dark-mode-text {
+  color: #343a40;
+}
+
+.dark-mode {
+  background-color: #343a40;
+  color: #FF9900;
+  border: 1px double #FF9900;
+}
+
+
+// .mycalss {
+//   display: flex;
+//   align-items: center;
+//   justify-content: space-around;
+// }
+
+// .mycol{
+//     color: #FF9900;
+// }
+// .myimg{
+//   border-top-right-radius: 5px;
+//   border-top-left-radius: 5px;
+//     width: 100%;
+//     height: 300px;
+// }
+// .myprod{
+//     display: flex;
+//     justify-content: center;
+// }
+// .myblock{
+// width: 30%;
+// border: 1px double #FF9900;
+// border-radius: 5px;
+// }
+// .myblock:hover{
+//     transition: transform 0.3s ease-out;
+//   transform: translateY(-0.15rem);
+//   box-shadow: 0px 3px 15px #2c2c2c;
+// }
+// h5{
+//     height: 50px;
+//     // line-height: 100px;
+// }
+// .but {
+//   width: 120px;
+//   display: flex;
+//   text-align: center;
+
+// }
+
+// .font {
+//   font-size: 20px;
+//   font-style: italic;
+// }
+
+// .mybtn {
+//   color: #FF9900;
+//   font-size: 24px;
+//   font-weight: 900;
+//   background-color: #343a40;
+//   border: none;
+//   width: 50px;
+
+// }
+
+// .mybtn:focus{
+//     border: none;
+//     outline: none;
+// }
+// .mybtn:hover{
+//     color: white;
+// }

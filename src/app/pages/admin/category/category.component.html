@@ -1,0 +1,76 @@
+
+<div class=" rounded border">
+
+  <nav class="navbar navbar-light bg-light w-100">
+    <a class="navbar-brand">Category</a>
+    <form class="form-inline">
+      <button class="btn btn-dark" (click)="addCategory()" (click)="openAdd(template)" type="submit">Add</button>
+      <ng-template #template>
+        <div class="modal-header">
+          <h4 class="modal-title pull-left">Modal title</h4>
+          <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <div class="input-group">
+                <input type="text" placeholder="filtered here..." (input)="change()" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="name here..." [(ngModel)]="categoryName" name="categoryName">
+              </div>
+        </div>   
+        <hr>
+              <div class="d-flex justify-content-end mb-3 mr-3 ml-3">
+                <button class="btn btn-secondary mr-1" (click)="resetForm()" (click)="modalRef.hide()">Close</button>
+
+                <button class="btn btn-dark submit" (click)="modalRef.hide()" [class.secondary]="check"  (click)="addCategory()" *ngIf="!editStatus">Add</button>
+                <button class="btn btn-dark submit" (click)="modalRef.hide()" (click)="saveCategory()" *ngIf="editStatus">Save edit</button>
+              </div>
+      
+        
+      </ng-template>
+    
+
+    </form>
+  </nav>
+  <div class="ml-3 mr-3">
+    <div class="input-group mt-3 mb-3">
+        <input type="text" placeholder="filtered here..." (input)="change()" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" [(ngModel)]="searchName" name="searchName">
+      </div>
+    <hr>
+    <table class="table table-bordered">
+      <thead class="thead-light">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">Edit</th>
+          <th scope="col">Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let cat of category | search: searchName">
+          <td scope="row">{{ cat.id }}</td>
+          <td scope="row" class="w-75">{{ cat.name }}</td>
+
+          <td>
+               <button  class="btn btn-dark" (click)="openAdd(template)" (click)="editCategory(cat)">Edit</button>
+
+
+          </td>
+          <td>
+
+            <button  (click)="openDel(delete)" class="btn btn-dark">Delete</button>
+          </td>
+          <ng-template #delete>
+            <!-- <div class="modal-body"> -->
+                  <div class="d-flex justify-content-around  mt-2 mb-2 ml-2 mr-2">
+                    <button class="btn btn-secondary submit w-50" (click)="resetForm()" (click)="modalRef.hide()">Dismiss</button>
+                    <button class="btn btn-danger submit w-50 ml-3" (click)="deleteCategory(cat)" (click)="modalRef.hide()" >Delete</button>
+                  </div>
+          <!-- </div> -->
+            
+          </ng-template>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+</div>

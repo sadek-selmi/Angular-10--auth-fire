@@ -1,0 +1,43 @@
+.mywidth {
+  max-width: 1000px !important;
+  width: 1000px !important;
+  margin: calc(30%) auto;
+  background-color: lightgrey;
+  height: 500px;
+}
+
+// .modal-content{
+//     // max-width: 1000px !important;
+// width: 1000px !important;
+// height: 500px;
+// margin: calc(30%) auto;
+// background-color: lightgrey;
+// }
+.myimg {
+  width: 60px;
+  height: 60px;
+  margin: 5px auto;
+  display: flex;
+
+}
+
+select:focus {
+  color: #495057;
+  background-color: #fff;
+  border-color: #80bdff;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, .25);
+}
+
+input:focus,
+textarea:focus {
+  color: #495057;
+  background-color: #fff;
+  border-color: #80bdff;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, .25);
+}
+
+.mycolor {
+  background-color: #e9ecef;
+}

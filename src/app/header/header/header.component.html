@@ -1,0 +1,161 @@
+<header>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Pizza</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="[ 'menu/pizza' ]" routerLinkActive="active">Products</a>
+
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" [routerLink]="[ '/blog' ]">Blog</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link">About</a>
+        </li>
+
+      </ul>
+    </div>
+    <div class="headerSection user-block nav-item">
+      <a class="nav-link" (click)="signInModal(signIn)" *ngIf="!out; else signOut">Sign In</a>
+
+      <ng-template #signOut>
+        <a class="nav-link" (click)="openDel(delete)" *ngIf="out">Sign Out</a>
+      </ng-template>
+      <ng-template #profile>
+        <img src="assets/PngItem_1468479.png" [routerLink]="[ '/profile' ]" *ngIf="up" class="myimg mr-3 mb-1" alt="">
+      </ng-template>
+
+
+    </div>
+    <div class="headerSection user-block nav-item">
+      <a class="nav-link" (click)="signModal(signUp)" *ngIf="!up; else profile">Sign Up</a>
+
+    </div>
+    <div class="headerSection header-cart">
+      <a [routerLink]="[ '/basket' ]" class="basket mr-3">
+        <img src="assets/shopping-cart.svg" alt="shopping-cart">
+        <span class="basketPrice">
+          <i>{{ totalPrice }} грн</i>
+        </span>
+      </a>
+    </div>
+    <!-- <ng-template #profile> -->
+    <div class="headerSection user-block nav-item" *ngIf="admin">
+      <a class="nav-link" [routerLink]="[ '/admin' ]">Увійти</a>
+    </div>
+    <!-- </ng-template> -->
+
+
+  </nav>
+
+</header>
+
+
+<ng-template #signIn>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Sign In</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="resetForm()" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div>
+      <form>
+        <div class="form-group">
+          <label for="userEmail">Email address</label>
+          <input type="email" [(ngModel)]="userEmail" name="userEmail" class="form-control" id="userEmail">
+
+        </div>
+        <div class="form-group">
+          <label for="userPassword">Password</label>
+          <input type="password" [(ngModel)]="userPassword" name="userPassword" class="form-control" id="userPassword">
+        </div>
+
+
+        <button type="submit" (click)="signIN()" (click)="modalRef.hide()" class="btn btn-success">Sign In</button>
+
+
+      </form>
+    </div>
+  </div>
+</ng-template>
+<ng-template #signUp>
+  <div class="modal-header ">
+    <h4 class="modal-title pull-left">Sign Up</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="resetForm()" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div>
+      <form>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputEmail">Email</label>
+            <input type="email" [(ngModel)]="inputEmail" name="inputEmail" class="form-control" id="inputEmail"
+              placeholder="user@gmail.com">
+          </div>
+          <div class="form-group col-md-6">
+            <label for="inputPassword">Password</label>
+            <input type="password" class="form-control" [(ngModel)]="inputPassword" name="inputPassword"
+              id="inputPassword">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputStreet">Address(Street name)</label>
+            <input type="text" class="form-control" id="inputStreet" [(ngModel)]="inputStreet" name="inputStreet"
+              placeholder="Antonucha">
+          </div>
+          <div class="form-group col-md-3">
+            <label for="userFName">First Name</label>
+            <input type="text" class="form-control" [(ngModel)]="userFName" name="userFName" id="userFName"
+              placeholder="Bohdan">
+          </div>
+          <div class="form-group col-md-3">
+            <label for="userSName">Second Name</label>
+            <input type="text" class="form-control" [(ngModel)]="userSName" name="userSName" id="userSName"
+              placeholder="Kolodii">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputCity">City</label>
+            <input type="text" class="form-control" id="inputCity" [(ngModel)]="inputCity" name="inputCity"
+              placeholder="Lviv">
+          </div>
+          <div class="form-group col-md-4">
+            <label for="inputState">State</label>
+            <input type="text" class="form-control" id="inputState" [(ngModel)]="inputState" name="inputState"
+              placeholder="Lviv region">
+          </div>
+          <div class="form-group col-md-2">
+            <label for="inputZip">City index</label>
+            <input type="text" class="form-control" id="inputZip" [(ngModel)]="inputZip" name="inputZip"
+              placeholder="79049">
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary" (click)="modalRef.hide()" (click)="signUP()">Sign up</button>
+      </form>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #delete>
+  <div class="d-flex  justify-content-around mymodal mt-2 mb-2 ml-2 mr-2">
+    <button class="btn btn-secondary submit w-50" (click)="resetForm()" (click)="modalRef.hide()">Dismiss</button>
+    <button class="btn btn-danger submit w-50 ml-1" (click)="signOUT()" (click)="modalRef.hide()">Sign Out</button>
+  </div>
+
+
+</ng-template>

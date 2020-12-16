@@ -1,0 +1,57 @@
+<form>
+    <div class="form-group">
+
+      <input [(ngModel)]="blogTitle" name="blogTitle" type="text" class="form-control" id="title" placeholder="title here...">
+    </div>
+    <div class="form-group">
+    
+      <textarea [(ngModel)]="blogText" name="blogText" class="form-control height" id="text" cols="10" rows="10" placeholder="text here..."></textarea>
+    </div>
+    <div class="form-group">
+      <input [(ngModel)]="blogAuthor" name="blogAuthor" type="text" class="form-control" id="title" placeholder="author here...">
+    </div>
+    <div class="form-group">
+      <div class="custom-file">
+        <input type="file" class="custom-file-input" id="inputGroupFile01" (change)="uploadFile($event)" aria-describedby="inputGroupFileAddon01">
+        <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+      </div>
+      <div *ngIf="!success" class="d-flex align-items-center mt-3 mb-3">
+        <strong>Loading...</strong>
+        <div class="spinner-border ml-auto text-primary" role="status" aria-hidden="true"></div>
+      </div>
+    </div>
+    
+    <button *ngIf="!editStatus" (click)="addAdminBlog()" type="button" class="btn btn-dark">ADD</button>
+      <button *ngIf="editStatus" (click)="saveAdminBlog()" type="button" class="btn btn-dark">Save</button>
+  </form>
+  <hr>
+  <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Title</th>
+          <th scope="col">Text</th>
+          <th scope="col">Date</th>
+          <th scope="col">Author</th>
+          <th scope="col">Edit</th>
+          <th scope="col">Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let b of adminBlog; let i=index">
+              <td>{{ i+1 }}</td>
+              <td>{{ b.title }}</td>
+              <td>{{ b.text }}</td>
+              <td>{{ b.date | date: MM }}</td>
+              <td>{{ b.author }}</td>
+              <td>
+                  <button  class="btn btn-dark" (click)="editAdminBlog(b)">Edit</button>
+                  
+                  
+              </td>
+              <td>
+                  <button (click)="deleteAdminBlog(b)" class="btn btn-dark">Delete</button>
+              </td>
+          </tr>
+      </tbody>
+    </table>

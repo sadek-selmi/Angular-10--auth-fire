@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "admin-blog-f6b6a": {
+      "hosting": {
+        "js-advance-hw16": [
+          "admin-blog-f6b6a"
+        ]
+      }
+    }
+  }
+}

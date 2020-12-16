@@ -1,0 +1,23 @@
+<div class="myprod">
+  <div class=" bg-dark myblock ml-3" *ngFor="let prod of products">
+    <img [attr.src]="prod.image" class="myimg" alt="...">
+    <div class="card-body">
+      <h5 class="card-title text-center text-light">{{ prod.name }}</h5>
+      <p class="card-text text-center text-light">{{ prod.description }}</p>
+      <hr>
+      <div class="mycalss">
+        <h3 class="text-right mycol">{{ prod.price * prod.count }} </h3><span class="font mb-1 text-light">грн</span>
+        <div class="but">
+
+          <button class="mybtn " (click)="productCount(prod,false)">-</button>
+          <input type="text" maxlength='1' class="w-25 text-center border text-light bg-dark" [value]="prod.count">
+          <button class="mybtn " (click)="productCount(prod,true)">+</button>
+        </div>
+      </div>
+      <hr>
+
+      <div class="d-flex justify-content-center">
+        <button href="#" class="btn btn-danger" (click)="addToBasket(prod)">Замовити</button> </div>
+    </div>
+  </div>
+</div>

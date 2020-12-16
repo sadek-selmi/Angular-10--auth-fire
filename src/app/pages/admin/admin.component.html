@@ -1,0 +1,17 @@
+<section class="container-fluid mt-3">
+  <div class="row">
+    <div class="col-2">
+      <div class="nav flex-column nav-pills">
+        <a class="nav-link dark-mode-text" [routerLink]="[ 'category' ]" routerLinkActive="dark-mode">Category</a>
+        <a class="nav-link dark-mode-text" [routerLink]="[ 'products' ]" routerLinkActive="dark-mode">Product</a>
+        <a class="nav-link dark-mode-text" [routerLink]="[ 'adminBlogs' ]" routerLinkActive="dark-mode">Blogs</a>
+
+      </div>
+    </div>
+    <div class="col-10">
+      <div class="tab-content">
+          <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</section>

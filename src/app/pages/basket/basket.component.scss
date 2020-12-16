@@ -1,0 +1,69 @@
+.but {
+  width: 120px;
+  display: flex;
+  text-align: center;
+  justify-content: center !important;
+  margin-right: 10px;
+}
+
+.font {
+  font-size: 20px;
+  font-style: italic;
+}
+
+.mybtn {
+  color: #FF9900;
+  font-size: 24px;
+  font-weight: 900;
+  background-color: white;
+  border: none;
+  width: 50px;
+
+}
+
+.mybtn:focus {
+  border: none;
+  outline: none;
+}
+
+.mybtn:hover {
+  color: black;
+}
+
+.myimg {
+  width: 60px;
+  height: 60px;
+  // margin: 5px auto;
+  display: flex;
+
+}
+
+.mypos {
+  position: relative;
+}
+
+.mycross {
+
+  position: relative;
+  top: 6px;
+  left: calc(50%);
+  cursor: pointer;
+  color: #c80000;
+  font-weight: 700;
+}
+
+.mycross:hover {
+  color: black;
+}
+
+.mycross:focus {
+  color: red;
+}
+
+.mybut {
+  width: 150px;
+  background-color: #FF9900;
+  font-size: 20px;
+  font-weight: 500;
+  font-family: sans-serif;
+}

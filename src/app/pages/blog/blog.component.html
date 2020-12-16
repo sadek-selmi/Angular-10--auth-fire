@@ -1,0 +1,16 @@
+
+<div class="container mt-3 ">
+  <div class="row d-flex justify-content-around">
+    <div class="col-3 " *ngFor="let blog of userBlogs">
+      <div class="card mycard bg-dark">
+        <img [src]="blog.image" class="card-img-top myimg" alt="...">
+        <div class="card-body">
+            <p class="text-primary text-capitalize">{{ blog.date | date: 'MMM d, yyyy' }}  {{ blog.author }} </p> 
+          <h5 class="card-title text-light">{{ blog.title }}</h5>
+          <p class="card-text text-truncate text-light">{{ blog.text }}</p>
+          <a href="#" [routerLink]="[ '/blog', blog.id ]" class="btn btn-danger">Details</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
